@@ -34,3 +34,4 @@ steps:
 - bash: 'script/branding' 
 
 - bash: 'script/cibuild' test 
+
