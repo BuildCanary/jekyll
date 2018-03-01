@@ -2,7 +2,7 @@ queue:
   name: lukillgo
 steps:
 - script: |
-   echo "##vso[task.prependpath]C:\Program Files\Git\bin"
+   echo ##vso[task.prependpath]C:\Program Files\Git\bin
 
 - script: |
    set PATH=%RUBY_2_4_X64%\bin;%PATH%
