@@ -1,0 +1,36 @@
+queue:
+  name: lukillgo
+steps:
+- script: |
+   echo ##vso[task.prependpath]C:\Program Files\Git\bin
+
+- script: |
+   set PATH=%RUBY_2_4_X64%\bin;%PATH%
+   set
+   ruby -v
+   call bundle -v
+   
+   echo -----------
+   call gem install bundle
+   call gem install rake
+   
+   echo -----------
+   echo done with gems
+   
+   call bundle install
+   
+   echo -----------
+   echo done with bundle install
+   
+   call bundle exec rake spec
+   
+   echo done
+    
+  enabled: false
+
+- bash: inline |
+   bundle install
+
+- bash: 'script/branding' 
+
+- bash: 'script/cibuild' test 
