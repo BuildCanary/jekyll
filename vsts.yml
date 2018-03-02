@@ -28,7 +28,7 @@ steps:
     
   enabled: false
 
-- bash: inline |
+- bash: |
    gem install bundle
    bundle install
 
