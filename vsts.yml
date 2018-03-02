@@ -29,6 +29,7 @@ steps:
   enabled: false
 
 - bash: inline |
+   gem install bundle
    bundle install
 
 - bash: 'script/branding'
